@@ -65,3 +65,86 @@ testing <- football2 %>%
                 opponent_box = moving_oppo,
                 conversion = moving_conversion) %>% 
   filter(round >= 23)
+
+
+
+
+
+#######################################################
+
+#This section is for multinomial regression
+# Converting some variables
+football_multi <- football
+
+football_multi$outcome <- as.factor(football_multi$outcome)
+football_multi$team <- as.factor(football_multi$team)
+football_multi$opponent <- as.factor(football_multi$opponent)
+football_multi$where <- as.factor(football_multi$where)
+football_multi$round <- as.integer(football_multi$round)
+football_multi$competition <- as.factor(football_multi$competition)
+
+football_multi <- football_multi %>% 
+  mutate(conversion = (gf / shots)*100)
+
+#Getting training data
+training_multi <- football_multi %>% 
+  filter(round < 23) %>% 
+  dplyr::select(1:3,7:16)
+
+#Looking at the table of the dataset
+with(training_multi, table(outcome, team))
+
+
+# Seeing the SD and mean of each program
+with(training_multi, do.call(rbind, tapply(shots, outcome, function(x) c(M = mean(x), SD = sd(x)))))
+
+
+# Creating a dataset consisting the last five days of football
+rolling_football <- football_multi %>% 
+  filter(round >= 1)
+
+# Simple moving average
+testing_multi <- rolling_football %>%
+  group_by(team) %>%
+  mutate(moving_shots = round(rollmean(shots, k=21, fill=NA, align='right')),
+         moving_corners = round(rollmean(corners, k=21, fill=NA, align='right')),
+         moving_fouls = round(rollmean(fouls, k=21, fill=NA, align='right')),
+         moving_yellow = round(rollmean(yellow, k=21, fill=NA, align='right')),
+         moving_red = round(rollmean(red, k=21, fill=NA, align='right')),
+         moving_possession = round(rollmean(possession, k=21, fill=NA, align='right')),
+         moving_oppo = round(rollmean(opponent_box, k=21, fill=NA, align='right')),
+         moving_conversion = round(rollmean(conversion, k=21, fill=NA, align='right'))) %>% 
+  dplyr::select(1:3,7:8,
+                shots = moving_shots,
+                corners = moving_corners,
+                fouls = moving_fouls,
+                yellow = moving_yellow,
+                red = moving_red,
+                possession = moving_possession,
+                opponent_box = moving_oppo,
+                conversion = moving_conversion) %>% 
+  filter(round >= 23)
+
+
+# Exponential moving average
+
+testing_multi <- rolling_football %>%
+  group_by(team) %>%
+  mutate(moving_shots = round(TTR::EMA(shots, k=21, fill=NA, align='right')),
+         moving_corners = round(TTR::EMA(corners, k=21, fill=NA, align='right')),
+         moving_fouls = round(TTR::EMA(fouls, k=21, fill=NA, align='right')),
+         moving_yellow = round(TTR::EMA(yellow, k=21, fill=NA, align='right')),
+         moving_red = round(TTR::EMA(red, k=21, fill=NA, align='right')),
+         moving_possession = round(TTR::EMA(possession, k=21, fill=NA, align='right')),
+         moving_oppo = round(TTR::EMA(opponent_box, k=21, fill=NA, align='right')),
+         moving_conversion = round(TTR::EMA(conversion, k=21, fill=NA, align='right'))) %>% 
+  dplyr::select(1:3,7:8,
+                shots = moving_shots,
+                corners = moving_corners,
+                fouls = moving_fouls,
+                yellow = moving_yellow,
+                red = moving_red,
+                possession = moving_possession,
+                opponent_box = moving_oppo,
+                conversion = moving_conversion) %>% 
+  filter(round >= 23)
