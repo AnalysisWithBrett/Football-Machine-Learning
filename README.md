@@ -1,6 +1,5 @@
-
+![MasterHead](https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif)
 # Using Machine Learning to Predict Football Outcomes
-This is a personal project. This project is focused on applying my data skills and knowledge in machine learning after reading the book "Introduction to Statistical Learning with Applications to R".
 
 #### -- Project Status: Almost Done
 
@@ -41,15 +40,23 @@ The primary objective of this project is to demonstrate the practical applicatio
 
 ## Getting Started
 
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
+1. Power BI report of my machine learning analysis is stored [here](https://app.powerbi.com/groups/me/reports/9a4f4937-02f1-42be-967a-2717592172d1/ReportSectionfe5ccb1598c30660da5d?experience=power-bi).
+   
+3. Raw Data is being kept [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/la%20liga.xlsx).
+
+4. The library for R is [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/Library).
     
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
+5. Data processing/transformation scripts are being kept [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_manipulation.R). This also includes preparing the training and testing set with time-series methods employed, such as simple and exponential moving averages.
+  
+6. Model selection scripts are being kept [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_selection.R). The method used here was subset selection.
+  
+7. K-nearest neighbour script is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_knn.R).
 
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
+8. Linear discriminant analysis is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_lda.R).
 
-5. Follow setup [instructions](Link to file)
+9. Multinomial Regression is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_mr.R).
+
+10. Random Forest is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_rf.R).
 
 
 ## Contact
