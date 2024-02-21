@@ -1,62 +1,59 @@
-![MasterHead](https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif)
+![MasterHead](https://i.pinimg.com/originals/0e/79/8f/0e798f91138755ce7386df586f6feb3b.gif)
 # Using Machine Learning to Predict Football Outcomes
 
 #### -- Project Status: Almost Done
 
 ## Project Intro/Objective
-This project leverages machine learning tools to predict the outcome of football matches, determining whether a team will win, lose, or draw, based on various factors such as the opponent they face and their past performance. Inspired by the concepts outlined in "Introduction to Statistical Learning with Applications in R," this project serves as an application of data skills and knowledge gained from studying statistical learning.
+Best Cart Mini Marts have convenience retails stores in most gas stations in Great Britain. They sell a vast range of products at their stores. By nature, all their retail stores are relatively compact, and therefore, are limited in terms of how much stock they can carry. Additionally, overstocking and waste increase greenhouse gas emissions because more goods are produced, transported, and disposed of than necessary. This increases the carbon footprint of the store. Therefore, identifying the right stocking mix throughout the year is a key driver of success for Best Cart Mini Marts.
 
-The primary objective of this project is to demonstrate the practical application of machine learning algorithms in predicting football match outcomes. By analyzing simulated data from the football manager game and employing predictive modeling techniques, I aim to develop accurate predictions that can aid in decision-making processes for various stakeholders such as sports analysts, betting enthusiasts, and team managers.
+I have provided with sales data from 2022 to enable me to provide data-driven recommendations on the right stocking mix throughout the year ahead. There are products that sell consistently at the same volume throughout the year, and some go through significant fluctuation over the year. Therefore, it is key that I keep practical considerations in mind while doing my analysis; considerations such as product positioning (premium or budget), seasonality, alliances with specific brands to name just a few examples. 
+
+Another suggestion from the Best Cart team was to look very closely at data for quality issues. He mentioned some common data entry errors included spelling mistakes, missing fields, same products being listed as different products due to inconsistent naming, and incorrect categorisation of products. He also mentioned that recently, a system misconfiguration resulted in the country code being updated as “UK” instead of the designated “GB”.
 
 ### Methods Used
-* Inferential Statistics
-* Machine Learning (K-Nearest Neighbour, Linear Discriminant Analysis, Multinomial Regression, and Random Forest)
-* Data Visualization
-* Predictive Modeling
 * Data Cleaning and Manipulation
-* Model Selection
+* Data Visualization
+* Data Transformation with Box-Cox and Logarithm
+* Linear Regression
 
 ### Technologies
 * R 
 * Microsoft Power BI
 
 ## Project Objective
-* Model Comparison: Assess the performance of different machine learning algorithms such as multinomial regression, linear discriminant analysis, random forests, and K-nearest neighbour. Compare their predictive capabilities to determine the most accurate and reliable model for football outcome prediction.
+* Optimizing Stocking Mix: Analyze sales data from 2022 to identify products that sell consistently and those that experience significant fluctuations throughout the year. Consider practical factors such as product positioning (premium or budget), seasonality, and brand alliances to determine the optimal stocking mix.
 
-* Variable Selection: Utilize feature selection techniques to identify the most influential variables for prediction. Explore the significance of factors like team performance metrics, opponent strength, historical match data, and time-series indicators (e.g., exponential moving averages) in improving prediction accuracy.
+* Data-driven Recommendations: This project is data-driven, utilizing sales data from 2022 to make informed recommendations for the year ahead. We will identify trends, patterns, and correlations in the data to guide stocking decisions.
 
-* Time-series Analysis: Investigate various time-series methods, including exponential moving averages, to fill gaps in data and enhance predictive modeling. Determine the optimal time-series approach that maximizes prediction accuracy while accounting for the dynamic nature of football matches.
+* Quality Control: Ensuring the accuracy and consistency of data is crucial for effective analysis. Common data entry errors such as spelling mistakes, missing fields, inconsistent naming, and incorrect categorization of products can skew the analysis. Measures will be implemented to address these issues, such as data validation and system configuration checks.
+
+* Correcting System Errors: Recent system misconfigurations, such as the incorrect country code being updated as "UK" instead of "GB," need to be addressed to ensure accurate data analysis and reporting.
 
 ### Methodology
-1. Data Collection and Preprocessing: Gather football match data, from Football Manager 2024 including relevant variables and time-series indicators. Clean and preprocess the data to ensure consistency and accuracy.
+1. Data Collection and Cleaning:
+* Data Sources: Gather sales data from 2022 and any other relevant datasets that may aid in the analysis, such as temperature, rainfall, and even covid-19 cases.
 
-2. Preparing Training and Testing set: Split the processesed data into half, so in this case the first 20 league games should be in the training set, while the other is in the testing set. In addition, create new columns for time-series methods to predict the values for certain predictors like corners taken, ball possession, shots, etc.
+* Data Cleaning: Perform thorough data cleaning to address common issues such as missing values, duplicates, spelling mistakes, inconsistent naming, and incorrect categorization of products. Ensure data integrity and consistency.
 
-3. Variable Optimization: Employ feature selection techniques and time-series analysis to identify the most influential variables and time-series methods for prediction accuracy.
+2. Exploratory Data Analysis (EDA):
+* Trend Analysis: Identify trends and patterns in sales data to understand overall sales performance and seasonal variations.
 
-4. Model Training and Evaluation: Train multiple machine learning models using the prepared dataset. Evaluate the performance of each model using appropriate metrics such as accuracy, precision, recall, and F1 score.
-  
-5. Model Comparison: Compare the performance of different machine learning algorithms and time-series methods to select the most suitable combination for football outcome prediction.
+* Product Analysis: Analyze individual product performance, including sales volume, revenue, and profitability. Identify products with consistent sales and those with significant fluctuations throughout the year.
 
-## Getting Started
+* Segmentation: Segment products based on practical considerations such as product positioning (premium or budget), seasonality, and brand alliances.
 
-1. Power BI report of my machine learning analysis is stored [here](https://app.powerbi.com/groups/me/reports/9a4f4937-02f1-42be-967a-2717592172d1/ReportSectionfe5ccb1598c30660da5d?experience=power-bi).
-   
-3. Raw Data is being kept [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/la%20liga.xlsx).
+3. Statistical Analysis:
+* Correlation Analysis: Determine correlations between various factors such as product characteristics, seasonality, and sales performance to identify key drivers of sales.
 
-4. The library for R is [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/Library).
-    
-5. Data processing/transformation scripts are being kept [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_manipulation.R). This also includes preparing the training and testing set with time-series methods employed, such as simple and exponential moving averages.
-  
-6. Model selection scripts are being kept [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_selection.R). The method used here was subset selection.
-  
-7. K-nearest neighbour script is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_knn.R).
+* Forecasting: Use time series analysis or other forecasting techniques to predict future sales trends and anticipate demand fluctuations for different products.
 
-8. Linear discriminant analysis is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_lda.R).
+4. Optimization:
+* Stocking Mix Optimization: Utilize the insights gained from EDA and statistical analysis to optimize the stocking mix throughout the year. Prioritize products based on their performance, seasonality, and strategic importance.
 
-9. Multinomial Regression is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_mr.R).
+5. Reporting and Recommendations:
+* Documentation: Provide detailed documentation on data cleaning processes, analysis methodologies, and findings with Microsoft Power BI
 
-10. Random Forest is stored [here](https://github.com/AnalysisWithBrett/Football-Machine-Learning/blob/main/football_rf.R).
+* Recommendations: Generate data-driven recommendations for the optimal stocking mix throughout the year based on the analysis. Consider practical factors such as product positioning, seasonality, and brand alliances to support decision-making processes for Best Cart Mini Marts.
 
 
 ## Contact
